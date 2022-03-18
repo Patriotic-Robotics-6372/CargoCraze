@@ -65,7 +65,7 @@ public class TestLift4 extends LinearOpMode {
 //                lift.move(liftEnc);
 //            }
 
-            if (a.isPressed()) lift.move(liftEnc);
+            if (gamepad1.a) lift.move(liftEnc);
 
             if (gamepad2.x) {
                 outtake.backPosition();
@@ -75,11 +75,11 @@ public class TestLift4 extends LinearOpMode {
                 outtake.neutralPosition();
             }
 
-            if (gamepad2.b) {
-                outtake.forwardPosition();
-            }
+          //  if (gamepad2.b) {
+            //    outtake.forwardPosition();
+            //}
 
-            lift.updateLevel();
+            //lift.updateLevel();
             telemetry.addData("liftEnc", liftEnc);
             telemetry.addData("lift encoder pos", lift.getLift().getCurrentPosition());
             telemetry.addData("level", lift.getCurrentLevel());
