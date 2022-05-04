@@ -64,9 +64,9 @@ public class TestLiftStates extends LinearOpMode {
                     }
                     // If gamepad2.dpad_up pressed, start EXTEND state
                     if (c.dpad_up_2.isPressed()) {
-                        lift.getLift().setTargetPosition(Constants.LEVEL_TWO);
+                        lift.getLift().setTargetPosition(Constants.LEVEL_FOUR);
                         lift.getLift().setMode(DcMotor.RunMode.RUN_TO_POSITION);
-                        lift.up(.5);
+                        lift.up(.9);
 
                         outtake.neutralPosition();
 
@@ -92,7 +92,7 @@ public class TestLiftStates extends LinearOpMode {
                         outtake.neutralPosition();
                         lift.getLift().setTargetPosition(Constants.LEVEL_ZERO);
                         lift.getLift().setMode(DcMotor.RunMode.RUN_TO_POSITION);
-                        lift.down(.3);
+                        lift.down(.6);
 
                         lift.setState(Lift.LiftState.RETRACT);
                     }
