@@ -20,7 +20,7 @@ public class Robotv2 implements Constants {
 
     public void init(HardwareMap hwMap, Telemetry telemetry) {
         drivetrain = new Drivetrain(hwMap.dcMotor.get("frontLeft"), hwMap.dcMotor.get("frontRight"), hwMap.dcMotor.get("backLeft"), hwMap.dcMotor.get("backRight"));
-        intake = new Intake(hwMap.dcMotor.get("intake"));
+        intake = new Intake(hwMap.dcMotor.get("ballsMotor"));
         optake = new Optake(hwMap.dcMotor.get("optake"));
         outtake = new Outtake(hwMap.servo.get("outtake"));
         lift = new Lift(hwMap.dcMotor.get("lift"));

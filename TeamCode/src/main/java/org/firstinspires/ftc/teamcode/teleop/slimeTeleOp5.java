@@ -14,6 +14,8 @@ import org.firstinspires.ftc.teamcode.hardware.Lift;
 import org.firstinspires.ftc.teamcode.hardware.Robot;
 import org.firstinspires.ftc.teamcode.hardware.Robotv2;
 
+import java.util.Optional;
+
 @TeleOp (name = "PRTeleOpDistricts", group = "Teleop")
 public class slimeTeleOp5 extends LinearOpMode {
 
@@ -73,14 +75,15 @@ public class slimeTeleOp5 extends LinearOpMode {
 
             if (gamepad2.right_trigger > 0.1) {
                 zoom.intake.spinBackward(1);
-                //zoom.optake.spinForward(1);
+                zoom.optake.spinForward(1);
                 //zoom.outtake.backPosition();
             } else if (gamepad2.left_trigger > 0.1) {
                 zoom.intake.spinForward(1);
-                //zoom.optake.spinBackward(1);
+                zoom.optake.spinBackward(1);
                 //zoom.outtake.forwardPosition();
             } else {
                 zoom.intake.stopIt();
+                zoom.optake.stopIt();
             }
 
             // Lift and Outtake

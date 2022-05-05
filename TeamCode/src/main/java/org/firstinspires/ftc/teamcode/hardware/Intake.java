@@ -25,14 +25,15 @@ public class Intake {
     //spin forward
     public void spinForward(double power) {
         intake.setPower(power);
+
     }
     //spin backward
     public void spinBackward(double power ) {
-        intake. setPower(-power);
+        intake.setPower(-power);
     }
     //stop
     public void stopIt() {
-        intake. setPower(0);
+        intake.setPower(0);
     }
 
     public void setState(IntakeState state) {
@@ -42,6 +43,8 @@ public class Intake {
     public DcMotor getIntake() {
         return intake;
     }
+
+
 
     public IntakeState getState() {
         return intakeState;
