@@ -9,7 +9,7 @@
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.firstinspires.ftc/Tfod/7.0.0/33832ed5a4a9ff0d8b2a38b567e1e4ae094192dc/Tfod-7.0.0-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.firstinspires.ftc/Tfod/7.0.0/e95ee1bf0c3673020fd2d0a23f3fee3fc07c7255/Tfod-7.0.0-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.firstinspires.ftc/tfod/7.0.0/e95ee1bf0c3673020fd2d0a23f3fee3fc07c7255/Tfod-7.0.0-sources.jar!/" />
     </SOURCES>
   </library>
 </component>
