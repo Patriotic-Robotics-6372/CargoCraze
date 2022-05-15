@@ -11,6 +11,7 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 public class Optake {
 
     private DcMotor optake;
+    private double speed = 1;
 
     public enum OptakeState {
         IDLE, FORWARD, BACKWARD
@@ -24,11 +25,11 @@ public class Optake {
 
     //spin forward
     public void spinForward(double power) {
-        optake.setPower(power);
+        optake.setPower(power * speed);
     }
     //spin backward
     public void spinBackward(double power ) {
-        optake. setPower(-power);
+        optake. setPower(-power * speed);
     }
     //stop
     public void stopIt() {

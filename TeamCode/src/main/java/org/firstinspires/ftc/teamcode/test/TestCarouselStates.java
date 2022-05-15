@@ -1,5 +1,6 @@
 package org.firstinspires.ftc.teamcode.test;
 
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.util.ElapsedTime;
@@ -14,6 +15,7 @@ import org.firstinspires.ftc.teamcode.hardware.Drivetrain;
     Date: 1/17/22
     Desc: Test Carousel class using states
  */
+@Disabled
 @TeleOp (name = "TestCarouselStates", group = "PRTest")
 public class TestCarouselStates extends LinearOpMode {
 

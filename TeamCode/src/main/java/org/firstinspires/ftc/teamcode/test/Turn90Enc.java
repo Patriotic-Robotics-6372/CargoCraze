@@ -1,12 +1,13 @@
 package org.firstinspires.ftc.teamcode.test;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 
 import org.firstinspires.ftc.teamcode.hardware.Robot;
 
 @Autonomous(name = "Turn90", group = "PRTest")
-//@Disabled
+@Disabled
 public class Turn90Enc extends LinearOpMode {
 
     Robot zoom = new Robot();

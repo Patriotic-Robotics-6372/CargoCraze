@@ -12,7 +12,7 @@ import org.openftc.easyopencv.OpenCvCamera;
 import org.openftc.easyopencv.OpenCvCameraFactory;
 import org.openftc.easyopencv.OpenCvCameraRotation;
 
-//@Disabled
+@Disabled
 @Autonomous (name = "TestDasboardWebcam", group = "Test")
 public class TestDashboardWebcam extends LinearOpMode {
 

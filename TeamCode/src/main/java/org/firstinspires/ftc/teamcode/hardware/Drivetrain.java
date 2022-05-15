@@ -326,7 +326,7 @@ public class Drivetrain implements Constants {
 
         //Telemetry dTelem = dashboard.getTelemetry();
 
-        PIDController pid = new PIDController(0.01, 0.0001, 0.001, 20);
+        PIDController pid = new PIDController(0.014, 0.00003, 0.001, 20);
         imu.resetAngle();
 
         double startAngle = imu.getAngle();
@@ -422,6 +422,18 @@ public class Drivetrain implements Constants {
         }
         stop();
         setRunMode(DcMotor.RunMode.RUN_USING_ENCODER);
+    }
+
+    public void strafe(double leftInches, double rightInches) {
+        drive(leftInches, rightInches, -leftInches, -rightInches, power, power, power, power);
+    }
+
+    public void strafeLeft(double inches) {
+        strafe(inches, inches);
+    }
+
+    public void strafeRight(double inches) {
+        strafe(-inches, -inches);
     }
 
     /**

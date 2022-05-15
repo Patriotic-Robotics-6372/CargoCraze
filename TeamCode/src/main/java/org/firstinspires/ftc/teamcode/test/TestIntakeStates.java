@@ -1,5 +1,6 @@
 package org.firstinspires.ftc.teamcode.test;
 
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
@@ -12,6 +13,7 @@ import org.firstinspires.ftc.teamcode.hardware.Intake;
     Date: 1/17/22
     Desc: Test Intake class using states
  */
+@Disabled
 @TeleOp (name = "TestIntakeStates", group = "PRTest")
 public class TestIntakeStates extends LinearOpMode {
 

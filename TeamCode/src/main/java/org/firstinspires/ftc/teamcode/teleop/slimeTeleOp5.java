@@ -14,14 +14,16 @@ import org.firstinspires.ftc.teamcode.hardware.Lift;
 import org.firstinspires.ftc.teamcode.hardware.Robot;
 import org.firstinspires.ftc.teamcode.hardware.Robotv2;
 
-@TeleOp (name = "PRTeleOpDistricts", group = "Teleop")
+@TeleOp (name = "PRTeleOpDistricts", group = "AA")
 public class slimeTeleOp5 extends LinearOpMode {
 
     Robotv2 zoom = new Robotv2();
     Controller c;
+    double speed = 1;
 
     boolean rTToggle = false;
     boolean lbToggle = false;
+    boolean lStickToggle = false;
 
     ElapsedTime matchTime = new ElapsedTime();
 
@@ -60,6 +62,15 @@ public class slimeTeleOp5 extends LinearOpMode {
 
             c.updateInputs();
 
+            if(c.left_stick_button.isPressed()) {
+                lStickToggle = !lStickToggle;
+            }
+
+            if (lStickToggle) {
+                speed = 0.5;
+            } else {
+                speed = 1;
+            }
             // Movement
 
             rightSlide = -gamepad1.right_stick_x;
@@ -67,26 +78,27 @@ public class slimeTeleOp5 extends LinearOpMode {
             rightMove = -gamepad1.right_stick_y;
             leftMove = -gamepad1.left_stick_y;
 
-            zoom.drivetrain.setBase(-leftSlide + leftMove, rightSlide + rightMove, leftSlide + leftMove, -rightSlide + rightMove);
+            zoom.drivetrain.setBase((-leftSlide + leftMove) * speed, (rightSlide + rightMove) * speed, (leftSlide + leftMove) * speed, (-rightSlide + rightMove) * speed);
 
             // Intake and Optake
 
             if (gamepad2.right_trigger > 0.1) {
                 zoom.intake.spinBackward(1);
-                //zoom.optake.spinForward(1);
+                zoom.optake.spinBackward(1);
                 //zoom.outtake.backPosition();
             } else if (gamepad2.left_trigger > 0.1) {
                 zoom.intake.spinForward(1);
-                //zoom.optake.spinBackward(1);
+                zoom.optake.spinForward(1);
                 //zoom.outtake.forwardPosition();
             } else {
                 zoom.intake.stopIt();
+                zoom.optake.stopIt();
             }
 
             // Lift and Outtake
 
 
-            switch (zoom.lift.getState()) {
+          /*  switch (zoom.lift.getState()) {
                 case START:
                     if (!zoom.lift.getLift().isBusy()) {
                         zoom.lift.getLift().setMode(DcMotor.RunMode.RUN_USING_ENCODER);
@@ -160,7 +172,7 @@ public class slimeTeleOp5 extends LinearOpMode {
                 default:
                     zoom.lift.setState(Lift.LiftState.START);
             }
-
+*/
             if (c.dpad_down_2.isPressed() && zoom.lift.getState() != Lift.LiftState.START) {
                 zoom.lift.getLift().setMode(DcMotor.RunMode.RUN_USING_ENCODER);
                 zoom.outtake.neutralPosition();
@@ -179,11 +191,11 @@ public class slimeTeleOp5 extends LinearOpMode {
                 zoom.lift.down(1);
                 zoom.lift.setState(Lift.LiftState.START);
             }
-
-
-            if (gamepad2.dpad_up ) {
+// jernpe ienfcioa blafi firpr iemap bian ei wim
+// && zoom.lift.getLift().getCurrentPosition() < 2700
+            if (gamepad2.dpad_up && zoom.lift.getLift().getCurrentPosition() < 3000) {
                 zoom.lift.up(1);
-            } else if (gamepad2.dpad_down) {
+            } else if (gamepad2.dpad_down && zoom.lift.getLift().getCurrentPosition() > 0) {
                 zoom.lift.down(1);
             } else {
                 zoom.lift.stopLift();
@@ -241,9 +253,9 @@ public class slimeTeleOp5 extends LinearOpMode {
                 zoom.outtake.neutralPosition();
             }
 
-            if (gamepad2.b) {
-                zoom.outtake.forwardPosition();
-            }
+//            if (gamepad2.b) {
+//                zoom.outtake.forwardPosition();
+//            }
 
             telemetry.addData("carousel power", zoom.carousel.getPower());
             telemetry.addData("lift enc", zoom.lift.getLift().getCurrentPosition());

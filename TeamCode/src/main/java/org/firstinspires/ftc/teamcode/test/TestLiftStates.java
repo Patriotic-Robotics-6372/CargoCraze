@@ -1,5 +1,6 @@
 package org.firstinspires.ftc.teamcode.test;
 
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
@@ -16,6 +17,7 @@ import org.firstinspires.ftc.teamcode.hardware.Outtake;
     Date: 1/17/22
     Desc: Test Lift class using states
  */
+@Disabled
 @TeleOp (name = "TestLiftStates", group = "PRTest")
 public class TestLiftStates extends LinearOpMode {
 
